@@ -14,8 +14,10 @@ public class App {
     var request = HttpRequest.newBuilder(address).GET().build();
     HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
     String body = response.body();
-    System.out.println(body);
 
-    List<Map<String, String>> moviesList = body;
+    var parser = new JsonParser();
+    List<Map<String, String>> moviesList = parser.parse(body);
+    
+    
   }
 }
