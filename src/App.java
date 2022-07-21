@@ -18,6 +18,11 @@ public class App {
     var parser = new JsonParser();
     List<Map<String, String>> moviesList = parser.parse(body);
     
-    
+    for (Map<String,String> movie : moviesList) {
+      System.out.println(movie.get("title"));
+      System.out.println(movie.get("image"));
+      System.out.println(movie.get("imDbRating"));
+      System.out.println();
+    }
   }
 }
